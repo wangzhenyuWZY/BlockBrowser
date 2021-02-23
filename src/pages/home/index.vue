@@ -242,6 +242,10 @@ export default {
       let that = this
       getSnapshot().then((res)=>{
         if(res.data.statusCode==200){
+          res.data.data.forEach((item,index) =>{
+            item.transactionNum = item.transactionNum/Math.pow(10,6)
+            item.snapshotDate = item.snapshotDate.substring(5,item.snapshotDate.length)
+          })
           that.chartData = res.data.data
           that.createCharts()
           that.createCharts1()
@@ -458,6 +462,9 @@ export default {
         width:100%;
         &.hei241{
           height:345px;
+          &:first-child{
+            height:508px;
+          }
         }
         .detailCon{
           .translist{
