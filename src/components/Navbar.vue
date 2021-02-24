@@ -79,8 +79,8 @@ export default {
           this.$router.push('/TransferHistory')
       },
       toWhitepage(){
-          localStorage.setItem('nav',3)
-        //   this.$router.push('/')
+        //   localStorage.setItem('nav',3)
+          window.location.href = 'https://dotcash.oss-cn-hongkong.aliyuncs.com/DOTC%20White%20%20Paper.pdf'
       },
       toDownload(){
           const i18n = this.$i18n.locale
